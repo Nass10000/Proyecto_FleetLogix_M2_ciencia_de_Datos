@@ -503,6 +503,11 @@ def generate_routes():
 
 def get_hourly_distribution():
     """
+    NOTA: Probabilidades basadas en patrones típicos del sector logístico,
+    NO en datos históricos reales de FleetLogix (datos sintéticos).
+    
+    En un entorno real, estos valores deberían calcularse desde 
+    datos históricos usando análisis exploratorio.
     ╔══════════════════════════════════════════════════════════════════════════╗
     ║  FUNCIÓN AUXILIAR: DISTRIBUCIÓN HORARIA DE VIAJES                        ║
     ║  Retorna array de 24 probabilidades para simular patrones operativos    ║
