@@ -8,14 +8,17 @@ Proyecto integrador del Módulo 2 de Ciencia de Datos: Sistema de generación de
 
 ```
 Proyecto_FleetLogix_M2_ciencia_de_Datos/
-└── Parte1-PI/                    # Primer Avance: Generación de Datos Sintéticos
-    ├── fleetlogix_generator.py   # Script principal de generación
-    ├── README.md                  # Documentación completa
-    ├── requirements.txt           # Dependencias Python
-    ├── .env.example               # Plantilla de configuración
-    ├── .gitignore                 # Archivos ignorados
-    ├── DIAGRAMA_ER.dot            # Diagrama ER (Graphviz)
-    └── DIAGRAMA_ER.dbml           # Diagrama ER (dbdiagram.io)
+└── Parte1-PI/                          # Primer Avance: Generación de Datos Sintéticos
+    ├── fleetlogix_generator.py         # Script principal de generación (1,691 líneas)
+    ├── fleetlogix_schema_completo.sql  # Schema completo con todas las constraints
+    ├── fleetlogix_complete.dbml        # Modelo ER para dbdiagram.io
+    ├── diagrama_er.svg                 # Diagrama ER exportado (SVG)
+    ├── Documentación.pdf               # Documentación completa del proyecto
+    ├── Modelo_relacional.pdf           # Diagrama del modelo relacional
+    ├── README.md                       # Este archivo
+    ├── requirements.txt                # Dependencias Python
+    ├── .env.example                    # Plantilla de configuración de BD
+    └── .gitignore                      # Archivos ignorados por Git
 ```
 
 ## 🚀 Inicio Rápido

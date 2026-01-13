@@ -1,0 +1,234 @@
+// ════════════════════════════════════════════════════════════════════════════
+// FLEETLOGIX - Modelo Relacional Completo con TODOS los Constraints
+// Base de datos PostgreSQL con 6 tablas interrelacionadas
+// ════════════════════════════════════════════════════════════════════════════
+
+Project FleetLogix {
+  database_type: 'PostgreSQL'
+  Note: '''
+    Sistema de gestión de transporte y logística
+    505,650 registros sintéticos con integridad completa
+  '''
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TABLAS MAESTRAS
+// ════════════════════════════════════════════════════════════════════════════
+
+Table vehicles {
+  vehicle_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  license_plate varchar(20) [not null, unique, note: 'UNIQUE - Placa única (A123456)']
+  vehicle_type varchar(50) [not null, note: 'Camión Grande, Camión Mediano, Van, Motocicleta']
+  capacity_kg decimal(10,2) [note: 'Capacidad en kilogramos | CHECK: > 0 AND <= 15000']
+  fuel_type varchar(20) [note: 'Diesel o Gasolina']
+  acquisition_date date [note: 'Fecha de adquisición del vehículo']
+  status varchar(20) [default: 'active', note: 'DEFAULT active | CHECK: IN (active, inactive, maintenance)']
+  
+  Note: 'Vehículos de la flota - 200 registros'
+  indexes {
+    license_plate [unique, name: 'vehicles_license_plate_key']
+    status [name: 'idx_vehicles_status']
+  }
+}
+
+Table drivers {
+  driver_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  employee_code varchar(20) [not null, unique, note: 'UNIQUE - Código empleado (EMP-0001)']
+  first_name varchar(100) [not null, note: 'Nombre del conductor']
+  last_name varchar(100) [not null, note: 'Apellido del conductor']
+  license_number varchar(50) [not null, unique, note: 'UNIQUE - Número de licencia (LIC-123456789)']
+  license_expiry date [note: 'Fecha de expiración de licencia (2027-2030) | CHECK: >= hire_date']
+  phone varchar(20) [note: 'Teléfono de contacto']
+  hire_date date [note: 'Fecha de contratación (2020-2025)']
+  status varchar(20) [default: 'active', note: 'DEFAULT active | CHECK: IN (active, inactive, on_leave)']
+  
+  Note: 'Conductores empleados - 400 registros'
+  indexes {
+    employee_code [unique, name: 'drivers_employee_code_key']
+    license_number [unique, name: 'drivers_license_number_key']
+  }
+}
+
+Table routes {
+  route_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  route_code varchar(20) [not null, unique, note: 'UNIQUE - Código de ruta (RT-001)']
+  origin_city varchar(100) [not null, note: 'Ciudad de origen']
+  destination_city varchar(100) [not null, note: 'Ciudad de destino']
+  distance_km decimal(10,2) [note: 'Distancia en kilómetros (50-400 km) | CHECK: > 0 AND <= 500']
+  estimated_duration_hours decimal(5,2) [note: 'Duración estimada en horas | CHECK: > 0']
+  toll_cost decimal(10,2) [default: 0, note: 'DEFAULT 0 | CHECK: >= 0']
+  
+  Note: 'Rutas entre 5 ciudades - 50 registros'
+  indexes {
+    route_code [unique, name: 'routes_route_code_key']
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TABLAS TRANSACCIONALES
+// ════════════════════════════════════════════════════════════════════════════
+
+Table trips {
+  trip_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  vehicle_id integer [not null, note: 'FK → vehicles (ON DELETE RESTRICT)']
+  driver_id integer [not null, note: 'FK → drivers (ON DELETE RESTRICT)']
+  route_id integer [not null, note: 'FK → routes (ON DELETE RESTRICT)']
+  departure_datetime timestamp [not null, note: 'Fecha/hora de salida']
+  arrival_datetime timestamp [note: 'Fecha/hora de llegada (NULL si in_progress)']
+  fuel_consumed_liters decimal(10,2) [note: 'Combustible consumido en litros | CHECK: > 0']
+  total_weight_kg decimal(10,2) [note: 'Peso total de carga (50-95% de capacidad) | CHECK: > 0']
+  status varchar(20) [default: 'in_progress', note: 'DEFAULT in_progress | CHECK: IN (completed, in_progress, cancelled)']
+  
+  Note: '''
+    Viajes realizados - 100,000 registros (2 años: 2024-2025)
+    CHECK TABLE: arrival_datetime > departure_datetime (cuando arrival NOT NULL)
+  '''
+  indexes {
+    departure_datetime [name: 'idx_trips_departure', note: 'Índice en fecha de salida']
+  }
+}
+
+Table deliveries {
+  delivery_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  trip_id integer [not null, note: 'FK → trips (ON DELETE CASCADE)']
+  tracking_number varchar(50) [not null, unique, note: 'UNIQUE - Número de rastreo (DOM1234567890)']
+  customer_name varchar(200) [not null, note: 'Nombre del cliente']
+  delivery_address text [not null, note: 'Dirección de entrega completa']
+  package_weight_kg decimal(10,2) [note: 'Peso del paquete individual | CHECK: > 0']
+  scheduled_datetime timestamp [note: 'Fecha/hora programada de entrega']
+  delivered_datetime timestamp [note: 'Fecha/hora real de entrega']
+  delivery_status varchar(20) [default: 'pending', note: 'DEFAULT pending | CHECK: IN (delivered, pending, failed)']
+  recipient_signature boolean [default: false, note: 'DEFAULT false - Firma del destinatario']
+  
+  Note: '''
+    Entregas individuales - 400,000 registros (2-6 por viaje, 4 más común: 40.3%)
+    CHECK TABLE: delivered_datetime >= scheduled_datetime (cuando ambos NOT NULL)
+  '''
+  indexes {
+    tracking_number [unique, name: 'deliveries_tracking_number_key']
+    delivery_status [name: 'idx_deliveries_status']
+  }
+}
+
+Table maintenance {
+  maintenance_id integer [pk, increment, note: 'Primary Key - Auto increment']
+  vehicle_id integer [not null, note: 'FK → vehicles (ON DELETE CASCADE)']
+  maintenance_date date [not null, note: 'Fecha del mantenimiento']
+  maintenance_type varchar(50) [not null, note: 'Tipo: Cambio de aceite, Revisión de frenos, etc.']
+  description text [note: 'Descripción detallada del mantenimiento']
+  cost decimal(10,2) [note: 'Costo del mantenimiento (50-800) | CHECK: > 0']
+  next_maintenance_date date [note: 'Próxima fecha de mantenimiento (75-105 días después) | CHECK: > maintenance_date']
+  performed_by varchar(200) [note: 'Mecánico que realizó el mantenimiento']
+  
+  Note: 'Mantenimiento de vehículos - 5,000 registros (~1 cada 20 viajes)'
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// RELACIONES (FOREIGN KEYS)
+// ════════════════════════════════════════════════════════════════════════════
+
+Ref: trips.vehicle_id > vehicles.vehicle_id [delete: restrict]
+Ref: trips.driver_id > drivers.driver_id [delete: restrict]
+Ref: trips.route_id > routes.route_id [delete: restrict]
+Ref: deliveries.trip_id > trips.trip_id [delete: cascade]
+Ref: maintenance.vehicle_id > vehicles.vehicle_id [delete: cascade]
+
+// ════════════════════════════════════════════════════════════════════════════
+// CHECK CONSTRAINTS (Validaciones de Negocio)
+// ════════════════════════════════════════════════════════════════════════════
+// Nota: DBML no soporta CHECK constraints nativamente, pero están implementados
+// en la base de datos y validados por el código generador
+
+// CHECK vehicles:
+//   - capacity_kg > 0 AND capacity_kg <= 15000
+//   - status IN ('active', 'inactive', 'maintenance')
+
+// CHECK drivers:
+//   - license_expiry >= hire_date
+//   - status IN ('active', 'inactive', 'on_leave')
+
+// CHECK routes:
+//   - distance_km > 0 AND distance_km <= 500
+//   - estimated_duration_hours > 0
+//   - toll_cost >= 0
+
+// CHECK trips:
+//   - arrival_datetime > departure_datetime (cuando arrival_datetime IS NOT NULL)
+//   - fuel_consumed_liters > 0
+//   - total_weight_kg > 0
+//   - status IN ('completed', 'in_progress', 'cancelled')
+
+// CHECK deliveries:
+//   - package_weight_kg > 0
+//   - delivered_datetime >= scheduled_datetime (cuando ambos NOT NULL)
+//   - delivery_status IN ('delivered', 'pending', 'failed')
+
+// CHECK maintenance:
+//   - next_maintenance_date > maintenance_date (cuando NOT NULL)
+//   - cost > 0
+
+// ════════════════════════════════════════════════════════════════════════════
+// CONSTRAINTS Y VALIDACIONES DOCUMENTADAS
+// ════════════════════════════════════════════════════════════════════════════
+
+Note constraints {
+'''
+CONSTRAINTS IMPLEMENTADOS EN LA BASE DE DATOS:
+
+1. PRIMARY KEYS (6):
+   ✓ vehicles.vehicle_id           SERIAL PRIMARY KEY
+   ✓ drivers.driver_id             SERIAL PRIMARY KEY
+   ✓ routes.route_id               SERIAL PRIMARY KEY
+   ✓ trips.trip_id                 SERIAL PRIMARY KEY
+   ✓ deliveries.delivery_id        SERIAL PRIMARY KEY
+   ✓ maintenance.maintenance_id    SERIAL PRIMARY KEY
+
+2. UNIQUE CONSTRAINTS (5):
+   ✓ vehicles.license_plate        UNIQUE (formato: A123456)
+   ✓ drivers.employee_code         UNIQUE (formato: EMP-0001 a EMP-0400)
+   ✓ drivers.license_number        UNIQUE (formato: LIC-123456789)
+   ✓ routes.route_code             UNIQUE (formato: RT-001 a RT-050)
+   ✓ deliveries.tracking_number    UNIQUE (formato: DOM1234567890)
+
+3. FOREIGN KEYS (5):
+   ✓ trips.vehicle_id    → vehicles.vehicle_id   (ON DELETE RESTRICT)
+   ✓ trips.driver_id     → drivers.driver_id     (ON DELETE RESTRICT)
+   ✓ trips.route_id      → routes.route_id       (ON DELETE RESTRICT)
+   ✓ deliveries.trip_id  → trips.trip_id         (ON DELETE CASCADE)
+   ✓ maintenance.vehicle_id → vehicles.vehicle_id (ON DELETE CASCADE)
+
+4. DEFAULT VALUES (6):
+   ✓ vehicles.status              DEFAULT 'active'
+   ✓ drivers.status               DEFAULT 'active'
+   ✓ routes.toll_cost             DEFAULT 0
+   ✓ trips.status                 DEFAULT 'in_progress'
+   ✓ deliveries.delivery_status   DEFAULT 'pending'
+   ✓ deliveries.recipient_signature DEFAULT false
+
+5. ÍNDICES PERSONALIZADOS (3):
+   ✓ idx_trips_departure          ON trips(departure_datetime)
+   ✓ idx_deliveries_status        ON deliveries(delivery_status)
+   ✓ idx_vehicles_status          ON vehicles(status)
+
+6. CHECK CONSTRAINTS (Validaciones de Rangos):
+   ✓ vehicles.capacity_kg         > 0 AND <= 15000
+   ✓ vehicles.status              IN ('active', 'inactive', 'maintenance')
+   ✓ drivers.license_expiry       >= hire_date
+   ✓ drivers.status               IN ('active', 'inactive', 'on_leave')
+   ✓ routes.distance_km           > 0 AND <= 500
+   ✓ routes.toll_cost             >= 0
+   ✓ trips.arrival_datetime       > departure_datetime (cuando NOT NULL)
+   ✓ trips.fuel_consumed_liters   > 0
+   ✓ trips.status                 IN ('completed', 'in_progress', 'cancelled')
+   ✓ deliveries.package_weight_kg > 0
+   ✓ deliveries.delivery_status   IN ('delivered', 'pending', 'failed')
+   ✓ maintenance.cost             > 0
+   ✓ maintenance.next_maint_date  > maintenance_date
+
+7. VALIDACIONES DE CONSISTENCIA:
+   ✓ arrival_datetime > departure_datetime (cuando no NULL)
+   ✓ Suma de package_weight_kg ≤ total_weight_kg por trip
+   ✓ Todas las fechas dentro de 2024-2025
+   ✓ Licencias válidas durante período operativo
+'''
+}
