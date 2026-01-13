@@ -1,0 +1,174 @@
+digraph FleetLogix_ER {
+    rankdir=TB
+    splines=polyline
+    nodesep=0.6
+    ranksep=1.0
+    fontname="Arial"
+    fontsize=12
+    
+    // ENTIDADES
+    node [shape=box style=filled fillcolor="#FFD700" fontname="Arial" fontsize=11 height=0.6 width=1.8]
+    
+    VEHICLES [label="VEHICLES"]
+    DRIVERS [label="DRIVERS"]
+    ROUTES [label="ROUTES"]
+    TRIPS [label="TRIPS"]
+    DELIVERIES [label="DELIVERIES"]
+    MAINTENANCE [label="MAINTENANCE"]
+    
+    // RELACIONES
+    node [shape=diamond style=filled fillcolor="#00CED1" fontname="Arial" fontsize=10 height=0.8 width=1.2]
+    
+    realiza [label="realiza"]
+    conduce [label="conduce"]
+    sigue [label="sigue"]
+    contiene [label="contiene"]
+    recibe [label="recibe"]
+    
+    // ATRIBUTOS VEHICLES
+    node [shape=ellipse style=filled fillcolor="#E8E8E8" fontname="Arial" fontsize=9 height=0.4 width=1.0]
+    v_id [label="vehicle_id" shape=doubleellipse]
+    v_plate [label="license_plate"]
+    v_type [label="vehicle_type"]
+    v_capacity [label="capacity_kg"]
+    v_fuel [label="fuel_type"]
+    v_acquisition [label="acquisition_date"]
+    v_status [label="status"]
+    
+    // ATRIBUTOS DRIVERS
+    d_id [label="driver_id" shape=doubleellipse]
+    d_code [label="employee_code"]
+    d_fname [label="first_name"]
+    d_lname [label="last_name"]
+    d_license [label="license_number"]
+    d_expiry [label="license_expiry"]
+    d_phone [label="phone"]
+    d_hire [label="hire_date"]
+    d_status [label="status"]
+    
+    // ATRIBUTOS ROUTES
+    r_id [label="route_id" shape=doubleellipse]
+    r_code [label="route_code"]
+    r_origin [label="origin_city"]
+    r_dest [label="destination_city"]
+    r_dist [label="distance_km"]
+    r_duration [label="estimated_duration"]
+    r_toll [label="toll_cost"]
+    
+    // ATRIBUTOS TRIPS
+    t_id [label="trip_id" shape=doubleellipse]
+    t_vehicle [label="vehicle_id FK"]
+    t_driver [label="driver_id FK"]
+    t_route [label="route_id FK"]
+    t_depart [label="departure_datetime"]
+    t_arrival [label="arrival_datetime"]
+    t_fuel [label="fuel_consumed"]
+    t_weight [label="total_weight_kg"]
+    t_status [label="status"]
+    
+    // ATRIBUTOS DELIVERIES
+    de_id [label="delivery_id" shape=doubleellipse]
+    de_trip [label="trip_id FK"]
+    de_track [label="tracking_number"]
+    de_customer [label="customer_name"]
+    de_address [label="delivery_address"]
+    de_weight [label="package_weight_kg"]
+    de_scheduled [label="scheduled_datetime"]
+    de_delivered [label="delivered_datetime"]
+    de_status [label="delivery_status"]
+    de_signature [label="recipient_signature"]
+    
+    // ATRIBUTOS MAINTENANCE
+    m_id [label="maintenance_id" shape=doubleellipse]
+    m_vehicle [label="vehicle_id FK"]
+    m_date [label="maintenance_date"]
+    m_type [label="maintenance_type"]
+    m_desc [label="description"]
+    m_cost [label="cost"]
+    m_next [label="next_maint_date"]
+    m_by [label="performed_by"]
+    
+    // CONEXIONES ATRIBUTOS
+    edge [arrowhead=none style=solid penwidth=1]
+    
+    VEHICLES -> v_id
+    VEHICLES -> v_plate
+    VEHICLES -> v_type
+    VEHICLES -> v_capacity
+    VEHICLES -> v_fuel
+    VEHICLES -> v_acquisition
+    VEHICLES -> v_status
+    
+    DRIVERS -> d_id
+    DRIVERS -> d_code
+    DRIVERS -> d_fname
+    DRIVERS -> d_lname
+    DRIVERS -> d_license
+    DRIVERS -> d_expiry
+    DRIVERS -> d_phone
+    DRIVERS -> d_hire
+    DRIVERS -> d_status
+    
+    ROUTES -> r_id
+    ROUTES -> r_code
+    ROUTES -> r_origin
+    ROUTES -> r_dest
+    ROUTES -> r_dist
+    ROUTES -> r_duration
+    ROUTES -> r_toll
+    
+    TRIPS -> t_id
+    TRIPS -> t_vehicle
+    TRIPS -> t_driver
+    TRIPS -> t_route
+    TRIPS -> t_depart
+    TRIPS -> t_arrival
+    TRIPS -> t_fuel
+    TRIPS -> t_weight
+    TRIPS -> t_status
+    
+    DELIVERIES -> de_id
+    DELIVERIES -> de_trip
+    DELIVERIES -> de_track
+    DELIVERIES -> de_customer
+    DELIVERIES -> de_address
+    DELIVERIES -> de_weight
+    DELIVERIES -> de_scheduled
+    DELIVERIES -> de_delivered
+    DELIVERIES -> de_status
+    DELIVERIES -> de_signature
+    
+    MAINTENANCE -> m_id
+    MAINTENANCE -> m_vehicle
+    MAINTENANCE -> m_date
+    MAINTENANCE -> m_type
+    MAINTENANCE -> m_desc
+    MAINTENANCE -> m_cost
+    MAINTENANCE -> m_next
+    MAINTENANCE -> m_by
+    
+    // RELACIONES 1:N
+    edge [style=solid penwidth=2 fontname="Arial" fontsize=10]
+    
+    VEHICLES -> realiza [label="1" arrowhead=none]
+    realiza -> TRIPS [label="N" arrowhead=none]
+    
+    DRIVERS -> conduce [label="1" arrowhead=none]
+    conduce -> TRIPS [label="N" arrowhead=none]
+    
+    ROUTES -> sigue [label="1" arrowhead=none]
+    sigue -> TRIPS [label="N" arrowhead=none]
+    
+    TRIPS -> contiene [label="1" arrowhead=none]
+    contiene -> DELIVERIES [label="N" arrowhead=none]
+    
+    VEHICLES -> recibe [label="1" arrowhead=none]
+    recibe -> MAINTENANCE [label="N" arrowhead=none]
+    
+    // LAYOUT
+    {rank=same VEHICLES DRIVERS ROUTES}
+    {rank=same realiza conduce sigue recibe}
+    {rank=same TRIPS MAINTENANCE}
+    {rank=same contiene}
+    {rank=same DELIVERIES}
+}

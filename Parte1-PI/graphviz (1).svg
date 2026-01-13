@@ -1,0 +1,682 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3964pt" height="691pt" viewBox="0.00 0.00 3964.00 691.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 686.6)">
+<title>FleetLogix_ER</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-686.6 3960.06,-686.6 3960.06,4 -4,4"/>
+<!-- VEHICLES -->
+<g id="node1" class="node">
+<title>VEHICLES</title>
+<polygon fill="#ffd700" stroke="black" points="1165.57,-682.6 1035.97,-682.6 1035.97,-639.4 1165.57,-639.4 1165.57,-682.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1100.77" y="-657.7" font-family="Arial" font-size="11.00">VEHICLES</text>
+</g>
+<!-- realiza -->
+<g id="node7" class="node">
+<title>realiza</title>
+<polygon fill="#00ced1" stroke="black" points="1607.77,-555.4 1564.57,-526.6 1607.77,-497.8 1650.97,-526.6 1607.77,-555.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1607.77" y="-523.6" font-family="Arial" font-size="10.00">realiza</text>
+</g>
+<!-- VEHICLES&#45;&gt;realiza -->
+<g id="edge51" class="edge">
+<title>VEHICLES-&gt;realiza</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1165.66,-644.68C1288.71,-615.62 1543.77,-555.4 1543.77,-555.4 1543.77,-555.4 1564.3,-546.48 1582.11,-538.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1390.62" y="-594.4" font-family="Arial" font-size="10.00">1</text>
+</g>
+<!-- recibe -->
+<g id="node11" class="node">
+<title>recibe</title>
+<polygon fill="#00ced1" stroke="black" points="593.77,-555.4 550.57,-526.6 593.77,-497.8 636.97,-526.6 593.77,-555.4"/>
+<text xml:space="preserve" text-anchor="middle" x="593.77" y="-523.6" font-family="Arial" font-size="10.00">recibe</text>
+</g>
+<!-- VEHICLES&#45;&gt;recibe -->
+<g id="edge59" class="edge">
+<title>VEHICLES-&gt;recibe</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1035.88,-644.68C912.83,-615.62 657.77,-555.4 657.77,-555.4 657.77,-555.4 637.24,-546.48 619.43,-538.75"/>
+<text xml:space="preserve" text-anchor="middle" x="855.53" y="-594.4" font-family="Arial" font-size="10.00">1</text>
+</g>
+<!-- v_id -->
+<g id="node12" class="node">
+<title>v_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="751.77,-541 679.77,-541 679.77,-512.2 751.77,-512.2 751.77,-541"/>
+<text xml:space="preserve" text-anchor="middle" x="715.77" y="-523.9" font-family="Arial" font-size="9.00">vehicle_id</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_id -->
+<g id="edge1" class="edge">
+<title>VEHICLES-&gt;v_id</title>
+<path fill="none" stroke="black" d="M1035.58,-639.21C939.92,-608.7 772.77,-555.4 772.77,-555.4 772.77,-555.4 758.52,-548.45 744.27,-541.5"/>
+</g>
+<!-- v_plate -->
+<g id="node13" class="node">
+<title>v_plate</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="839.77" cy="-526.6" rx="45.24" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="839.77" y="-523.9" font-family="Arial" font-size="9.00">license_plate</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_plate -->
+<g id="edge2" class="edge">
+<title>VEHICLES-&gt;v_plate</title>
+<path fill="none" stroke="black" d="M1059.42,-639.02C1003.93,-610.88 907.27,-561.84 863.05,-539.41"/>
+</g>
+<!-- v_type -->
+<g id="node14" class="node">
+<title>v_type</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="971.77" cy="-526.6" rx="43.58" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="971.77" y="-523.9" font-family="Arial" font-size="9.00">vehicle_type</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_type -->
+<g id="edge3" class="edge">
+<title>VEHICLES-&gt;v_type</title>
+<path fill="none" stroke="black" d="M1080.33,-639.02C1053.48,-611.46 1007.1,-563.86 984.67,-540.84"/>
+</g>
+<!-- v_capacity -->
+<g id="node15" class="node">
+<title>v_capacity</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1100.77" cy="-526.6" rx="41.93" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1100.77" y="-523.9" font-family="Arial" font-size="9.00">capacity_kg</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_capacity -->
+<g id="edge4" class="edge">
+<title>VEHICLES-&gt;v_capacity</title>
+<path fill="none" stroke="black" d="M1100.77,-639.02C1100.77,-611.6 1100.77,-564.37 1100.77,-541.2"/>
+</g>
+<!-- v_fuel -->
+<g id="node16" class="node">
+<title>v_fuel</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1221.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1221.77" y="-523.9" font-family="Arial" font-size="9.00">fuel_type</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_fuel -->
+<g id="edge5" class="edge">
+<title>VEHICLES-&gt;v_fuel</title>
+<path fill="none" stroke="black" d="M1119.95,-639.02C1145.27,-611.31 1189.09,-563.36 1210.01,-540.47"/>
+</g>
+<!-- v_acquisition -->
+<g id="node17" class="node">
+<title>v_acquisition</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1353.77" cy="-526.6" rx="53.49" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1353.77" y="-523.9" font-family="Arial" font-size="9.00">acquisition_date</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_acquisition -->
+<g id="edge6" class="edge">
+<title>VEHICLES-&gt;v_acquisition</title>
+<path fill="none" stroke="black" d="M1140.86,-639.02C1194.23,-611.09 1286.89,-562.6 1330.2,-539.94"/>
+</g>
+<!-- v_status -->
+<g id="node18" class="node">
+<title>v_status</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1485.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1485.77" y="-523.9" font-family="Arial" font-size="9.00">status</text>
+</g>
+<!-- VEHICLES&#45;&gt;v_status -->
+<g id="edge7" class="edge">
+<title>VEHICLES-&gt;v_status</title>
+<path fill="none" stroke="black" d="M1165.97,-639.21C1261.62,-608.7 1428.77,-555.4 1428.77,-555.4 1428.77,-555.4 1447.82,-546.11 1463.9,-538.27"/>
+</g>
+<!-- DRIVERS -->
+<g id="node2" class="node">
+<title>DRIVERS</title>
+<polygon fill="#ffd700" stroke="black" points="2334.57,-682.6 2204.97,-682.6 2204.97,-639.4 2334.57,-639.4 2334.57,-682.6"/>
+<text xml:space="preserve" text-anchor="middle" x="2269.77" y="-657.7" font-family="Arial" font-size="11.00">DRIVERS</text>
+</g>
+<!-- conduce -->
+<g id="node8" class="node">
+<title>conduce</title>
+<polygon fill="#00ced1" stroke="black" points="1736.77,-555.4 1693.57,-526.6 1736.77,-497.8 1779.97,-526.6 1736.77,-555.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1736.77" y="-523.6" font-family="Arial" font-size="10.00">conduce</text>
+</g>
+<!-- DRIVERS&#45;&gt;conduce -->
+<g id="edge53" class="edge">
+<title>DRIVERS-&gt;conduce</title>
+<path fill="none" stroke="black" stroke-width="2" d="M2204.7,-645.46C2076.11,-616.71 1801.77,-555.4 1801.77,-555.4 1801.77,-555.4 1780.63,-546.36 1762.46,-538.59"/>
+<text xml:space="preserve" text-anchor="middle" x="2010.53" y="-594.4" font-family="Arial" font-size="10.00">1</text>
+</g>
+<!-- d_id -->
+<g id="node19" class="node">
+<title>d_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="2239.77,-541 2167.77,-541 2167.77,-512.2 2239.77,-512.2 2239.77,-541"/>
+<text xml:space="preserve" text-anchor="middle" x="2203.77" y="-523.9" font-family="Arial" font-size="9.00">driver_id</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_id -->
+<g id="edge8" class="edge">
+<title>DRIVERS-&gt;d_id</title>
+<path fill="none" stroke="black" d="M2259.31,-639.02C2245.65,-611.6 2222.1,-564.37 2210.55,-541.2"/>
+</g>
+<!-- d_code -->
+<g id="node20" class="node">
+<title>d_code</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2335.77" cy="-526.6" rx="52.5" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2335.77" y="-523.9" font-family="Arial" font-size="9.00">employee_code</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_code -->
+<g id="edge9" class="edge">
+<title>DRIVERS-&gt;d_code</title>
+<path fill="none" stroke="black" d="M2280.23,-639.02C2293.9,-611.6 2317.45,-564.37 2328.99,-541.2"/>
+</g>
+<!-- d_fname -->
+<g id="node21" class="node">
+<title>d_fname</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2469.77" cy="-526.6" rx="38.29" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2469.77" y="-523.9" font-family="Arial" font-size="9.00">first_name</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_fname -->
+<g id="edge10" class="edge">
+<title>DRIVERS-&gt;d_fname</title>
+<path fill="none" stroke="black" d="M2301.46,-639.02C2343.87,-610.95 2417.67,-562.09 2451.67,-539.58"/>
+</g>
+<!-- d_lname -->
+<g id="node22" class="node">
+<title>d_lname</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2588.77" cy="-526.6" rx="37.97" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2588.77" y="-523.9" font-family="Arial" font-size="9.00">last_name</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_lname -->
+<g id="edge11" class="edge">
+<title>DRIVERS-&gt;d_lname</title>
+<path fill="none" stroke="black" d="M2322.07,-638.96C2398,-608.41 2529.77,-555.4 2529.77,-555.4 2529.77,-555.4 2549.23,-546.23 2565.79,-538.43"/>
+</g>
+<!-- d_license -->
+<g id="node23" class="node">
+<title>d_license</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2721.77" cy="-526.6" rx="52.5" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2721.77" y="-523.9" font-family="Arial" font-size="9.00">license_number</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_license -->
+<g id="edge12" class="edge">
+<title>DRIVERS-&gt;d_license</title>
+<path fill="none" stroke="black" d="M2334.75,-642.02C2442.83,-612.11 2647.77,-555.4 2647.77,-555.4 2647.77,-555.4 2671.51,-546.48 2692.1,-538.75"/>
+</g>
+<!-- d_expiry -->
+<g id="node24" class="node">
+<title>d_expiry</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2865.77" cy="-526.6" rx="48.2" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2865.77" y="-523.9" font-family="Arial" font-size="9.00">license_expiry</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_expiry -->
+<g id="edge13" class="edge">
+<title>DRIVERS-&gt;d_expiry</title>
+<path fill="none" stroke="black" d="M2335.06,-647.02C2475.93,-619 2795.77,-555.4 2795.77,-555.4 2795.77,-555.4 2818.23,-546.48 2837.7,-538.75"/>
+</g>
+<!-- d_phone -->
+<g id="node25" class="node">
+<title>d_phone</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1858.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1858.77" y="-523.9" font-family="Arial" font-size="9.00">phone</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_phone -->
+<g id="edge14" class="edge">
+<title>DRIVERS-&gt;d_phone</title>
+<path fill="none" stroke="black" d="M2204.62,-640.69C2102.62,-610.47 1916.77,-555.4 1916.77,-555.4 1916.77,-555.4 1897.39,-546.11 1881.03,-538.27"/>
+</g>
+<!-- d_hire -->
+<g id="node26" class="node">
+<title>d_hire</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1973.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1973.77" y="-523.9" font-family="Arial" font-size="9.00">hire_date</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_hire -->
+<g id="edge15" class="edge">
+<title>DRIVERS-&gt;d_hire</title>
+<path fill="none" stroke="black" d="M2221.9,-638.96C2152.4,-608.41 2031.77,-555.4 2031.77,-555.4 2031.77,-555.4 2012.39,-546.11 1996.03,-538.27"/>
+</g>
+<!-- d_status -->
+<g id="node27" class="node">
+<title>d_status</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2088.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2088.77" y="-523.9" font-family="Arial" font-size="9.00">status</text>
+</g>
+<!-- DRIVERS&#45;&gt;d_status -->
+<g id="edge16" class="edge">
+<title>DRIVERS-&gt;d_status</title>
+<path fill="none" stroke="black" d="M2241.09,-639.02C2202.81,-611.02 2136.27,-562.35 2105.4,-539.76"/>
+</g>
+<!-- ROUTES -->
+<g id="node3" class="node">
+<title>ROUTES</title>
+<polygon fill="#ffd700" stroke="black" points="3532.57,-682.6 3402.97,-682.6 3402.97,-639.4 3532.57,-639.4 3532.57,-682.6"/>
+<text xml:space="preserve" text-anchor="middle" x="3467.77" y="-657.7" font-family="Arial" font-size="11.00">ROUTES</text>
+</g>
+<!-- sigue -->
+<g id="node9" class="node">
+<title>sigue</title>
+<polygon fill="#00ced1" stroke="black" points="2999.77,-555.4 2956.57,-526.6 2999.77,-497.8 3042.97,-526.6 2999.77,-555.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2999.77" y="-523.6" font-family="Arial" font-size="10.00">sigue</text>
+</g>
+<!-- ROUTES&#45;&gt;sigue -->
+<g id="edge55" class="edge">
+<title>ROUTES-&gt;sigue</title>
+<path fill="none" stroke="black" stroke-width="2" d="M3402.58,-643.08C3288.52,-613.47 3064.77,-555.4 3064.77,-555.4 3064.77,-555.4 3043.63,-546.36 3025.46,-538.59"/>
+<text xml:space="preserve" text-anchor="middle" x="3244.92" y="-594.4" font-family="Arial" font-size="10.00">1</text>
+</g>
+<!-- r_id -->
+<g id="node28" class="node">
+<title>r_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="3832.77,-541 3760.77,-541 3760.77,-512.2 3832.77,-512.2 3832.77,-541"/>
+<text xml:space="preserve" text-anchor="middle" x="3796.77" y="-523.9" font-family="Arial" font-size="9.00">route_id</text>
+</g>
+<!-- ROUTES&#45;&gt;r_id -->
+<g id="edge17" class="edge">
+<title>ROUTES-&gt;r_id</title>
+<path fill="none" stroke="black" d="M3522.49,-638.96C3601.92,-608.41 3739.77,-555.4 3739.77,-555.4 3739.77,-555.4 3754.02,-548.45 3768.27,-541.5"/>
+</g>
+<!-- r_code -->
+<g id="node29" class="node">
+<title>r_code</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3915.77" cy="-526.6" rx="40.28" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3915.77" y="-523.9" font-family="Arial" font-size="9.00">route_code</text>
+</g>
+<!-- ROUTES&#45;&gt;r_code -->
+<g id="edge18" class="edge">
+<title>ROUTES-&gt;r_code</title>
+<path fill="none" stroke="black" d="M3532.98,-642.37C3643.28,-612.56 3854.77,-555.4 3854.77,-555.4 3854.77,-555.4 3874.61,-546.36 3891.66,-538.59"/>
+</g>
+<!-- r_origin -->
+<g id="node30" class="node">
+<title>r_origin</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3123.77" cy="-526.6" rx="37.3" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3123.77" y="-523.9" font-family="Arial" font-size="9.00">origin_city</text>
+</g>
+<!-- ROUTES&#45;&gt;r_origin -->
+<g id="edge19" class="edge">
+<title>ROUTES-&gt;r_origin</title>
+<path fill="none" stroke="black" d="M3410.44,-638.96C3327.22,-608.41 3182.77,-555.4 3182.77,-555.4 3182.77,-555.4 3163.32,-546.23 3146.75,-538.43"/>
+</g>
+<!-- r_dest -->
+<g id="node31" class="node">
+<title>r_dest</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3255.77" cy="-526.6" rx="51.51" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3255.77" y="-523.9" font-family="Arial" font-size="9.00">destination_city</text>
+</g>
+<!-- ROUTES&#45;&gt;r_dest -->
+<g id="edge20" class="edge">
+<title>ROUTES-&gt;r_dest</title>
+<path fill="none" stroke="black" d="M3434.18,-639.02C3389.7,-611.24 3312.62,-563.11 3276.1,-540.29"/>
+</g>
+<!-- r_dist -->
+<g id="node32" class="node">
+<title>r_dist</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3393.77" cy="-526.6" rx="43.91" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3393.77" y="-523.9" font-family="Arial" font-size="9.00">distance_km</text>
+</g>
+<!-- ROUTES&#45;&gt;r_dist -->
+<g id="edge21" class="edge">
+<title>ROUTES-&gt;r_dist</title>
+<path fill="none" stroke="black" d="M3456.05,-639.02C3440.72,-611.6 3414.32,-564.37 3401.38,-541.2"/>
+</g>
+<!-- r_duration -->
+<g id="node33" class="node">
+<title>r_duration</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3541.77" cy="-526.6" rx="61.08" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3541.77" y="-523.9" font-family="Arial" font-size="9.00">estimated_duration</text>
+</g>
+<!-- ROUTES&#45;&gt;r_duration -->
+<g id="edge22" class="edge">
+<title>ROUTES-&gt;r_duration</title>
+<path fill="none" stroke="black" d="M3479.5,-639.02C3494.82,-611.6 3521.22,-564.37 3534.17,-541.2"/>
+</g>
+<!-- r_toll -->
+<g id="node34" class="node">
+<title>r_toll</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="3681.77" cy="-526.6" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3681.77" y="-523.9" font-family="Arial" font-size="9.00">toll_cost</text>
+</g>
+<!-- ROUTES&#45;&gt;r_toll -->
+<g id="edge23" class="edge">
+<title>ROUTES-&gt;r_toll</title>
+<path fill="none" stroke="black" d="M3501.68,-639.02C3547.29,-610.8 3626.84,-561.58 3662.97,-539.23"/>
+</g>
+<!-- TRIPS -->
+<g id="node4" class="node">
+<title>TRIPS</title>
+<polygon fill="#ffd700" stroke="black" points="1801.57,-413.8 1671.97,-413.8 1671.97,-370.6 1801.57,-370.6 1801.57,-413.8"/>
+<text xml:space="preserve" text-anchor="middle" x="1736.77" y="-388.9" font-family="Arial" font-size="11.00">TRIPS</text>
+</g>
+<!-- contiene -->
+<g id="node10" class="node">
+<title>contiene</title>
+<polygon fill="#00ced1" stroke="black" points="1463.77,-286.6 1420.57,-257.8 1463.77,-229 1506.97,-257.8 1463.77,-286.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1463.77" y="-254.8" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- TRIPS&#45;&gt;contiene -->
+<g id="edge57" class="edge">
+<title>TRIPS-&gt;contiene</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1693.51,-370.22C1635.48,-342.08 1534.37,-293.04 1488.12,-270.61"/>
+<text xml:space="preserve" text-anchor="middle" x="1619.4" y="-325.6" font-family="Arial" font-size="10.00">1</text>
+</g>
+<!-- t_id -->
+<g id="node35" class="node">
+<title>t_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="1621.77,-272.2 1549.77,-272.2 1549.77,-243.4 1621.77,-243.4 1621.77,-272.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1585.77" y="-255.1" font-family="Arial" font-size="9.00">trip_id</text>
+</g>
+<!-- TRIPS&#45;&gt;t_id -->
+<g id="edge24" class="edge">
+<title>TRIPS-&gt;t_id</title>
+<path fill="none" stroke="black" d="M1712.85,-370.22C1681.58,-342.8 1627.7,-295.57 1601.29,-272.4"/>
+</g>
+<!-- t_vehicle -->
+<g id="node36" class="node">
+<title>t_vehicle</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1710.77" cy="-257.8" rx="46.22" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1710.77" y="-255.1" font-family="Arial" font-size="9.00">vehicle_id FK</text>
+</g>
+<!-- TRIPS&#45;&gt;t_vehicle -->
+<g id="edge25" class="edge">
+<title>TRIPS-&gt;t_vehicle</title>
+<path fill="none" stroke="black" d="M1732.65,-370.22C1727.27,-342.8 1717.99,-295.57 1713.44,-272.4"/>
+</g>
+<!-- t_driver -->
+<g id="node37" class="node">
+<title>t_driver</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1842.77" cy="-257.8" rx="42.58" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1842.77" y="-255.1" font-family="Arial" font-size="9.00">driver_id FK</text>
+</g>
+<!-- TRIPS&#45;&gt;t_driver -->
+<g id="edge26" class="edge">
+<title>TRIPS-&gt;t_driver</title>
+<path fill="none" stroke="black" d="M1753.57,-370.22C1775.64,-342.66 1813.74,-295.06 1832.17,-272.04"/>
+</g>
+<!-- t_route -->
+<g id="node38" class="node">
+<title>t_route</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1969.77" cy="-257.8" rx="41.27" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1969.77" y="-255.1" font-family="Arial" font-size="9.00">route_id FK</text>
+</g>
+<!-- TRIPS&#45;&gt;t_route -->
+<g id="edge27" class="edge">
+<title>TRIPS-&gt;t_route</title>
+<path fill="none" stroke="black" d="M1773.69,-370.22C1823.22,-342.08 1909.52,-293.04 1948.99,-270.61"/>
+</g>
+<!-- t_depart -->
+<g id="node39" class="node">
+<title>t_depart</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2115.77" cy="-257.8" rx="62.08" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2115.77" y="-255.1" font-family="Arial" font-size="9.00">departure_datetime</text>
+</g>
+<!-- TRIPS&#45;&gt;t_depart -->
+<g id="edge28" class="edge">
+<title>TRIPS-&gt;t_depart</title>
+<path fill="none" stroke="black" d="M1796.83,-370.22C1877.81,-341.93 2019.22,-292.53 2082.96,-270.26"/>
+</g>
+<!-- t_arrival -->
+<g id="node40" class="node">
+<title>t_arrival</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2273.77" cy="-257.8" rx="52.82" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2273.77" y="-255.1" font-family="Arial" font-size="9.00">arrival_datetime</text>
+</g>
+<!-- TRIPS&#45;&gt;t_arrival -->
+<g id="edge29" class="edge">
+<title>TRIPS-&gt;t_arrival</title>
+<path fill="none" stroke="black" d="M1801.64,-376.55C1929.06,-347.76 2199.77,-286.6 2199.77,-286.6 2199.77,-286.6 2223.51,-277.68 2244.1,-269.95"/>
+</g>
+<!-- t_fuel -->
+<g id="node41" class="node">
+<title>t_fuel</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2420.77" cy="-257.8" rx="50.85" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2420.77" y="-255.1" font-family="Arial" font-size="9.00">fuel_consumed</text>
+</g>
+<!-- TRIPS&#45;&gt;t_fuel -->
+<g id="edge30" class="edge">
+<title>TRIPS-&gt;t_fuel</title>
+<path fill="none" stroke="black" d="M1801.87,-380.06C1959.31,-353.1 2347.77,-286.6 2347.77,-286.6 2347.77,-286.6 2371.19,-277.68 2391.5,-269.95"/>
+</g>
+<!-- t_weight -->
+<g id="node42" class="node">
+<title>t_weight</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1210.77" cy="-257.8" rx="51.84" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1210.77" y="-255.1" font-family="Arial" font-size="9.00">total_weight_kg</text>
+</g>
+<!-- TRIPS&#45;&gt;t_weight -->
+<g id="edge31" class="edge">
+<title>TRIPS-&gt;t_weight</title>
+<path fill="none" stroke="black" d="M1671.53,-376.1C1546.36,-347.14 1284.77,-286.6 1284.77,-286.6 1284.77,-286.6 1261.03,-277.68 1240.44,-269.95"/>
+</g>
+<!-- t_status -->
+<g id="node43" class="node">
+<title>t_status</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1341.77" cy="-257.8" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1341.77" y="-255.1" font-family="Arial" font-size="9.00">status</text>
+</g>
+<!-- TRIPS&#45;&gt;t_status -->
+<g id="edge32" class="edge">
+<title>TRIPS-&gt;t_status</title>
+<path fill="none" stroke="black" d="M1671.6,-371.03C1573.38,-340.64 1398.77,-286.6 1398.77,-286.6 1398.77,-286.6 1379.72,-277.31 1363.65,-269.47"/>
+</g>
+<!-- DELIVERIES -->
+<g id="node5" class="node">
+<title>DELIVERIES</title>
+<polygon fill="#ffd700" stroke="black" points="1528.57,-145 1398.97,-145 1398.97,-101.8 1528.57,-101.8 1528.57,-145"/>
+<text xml:space="preserve" text-anchor="middle" x="1463.77" y="-120.1" font-family="Arial" font-size="11.00">DELIVERIES</text>
+</g>
+<!-- de_id -->
+<g id="node44" class="node">
+<title>de_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="866.77,-28.8 794.77,-28.8 794.77,0 866.77,0 866.77,-28.8"/>
+<text xml:space="preserve" text-anchor="middle" x="830.77" y="-11.7" font-family="Arial" font-size="9.00">delivery_id</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_id -->
+<g id="edge33" class="edge">
+<title>DELIVERIES-&gt;de_id</title>
+<path fill="none" stroke="black" d="M1398.54,-111.8C1247.73,-87.29 887.77,-28.8 887.77,-28.8 887.77,-28.8 878.37,-26.59 867.19,-23.96"/>
+</g>
+<!-- de_trip -->
+<g id="node45" class="node">
+<title>de_trip</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="945.77" cy="-14.4" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="945.77" y="-11.7" font-family="Arial" font-size="9.00">trip_id FK</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_trip -->
+<g id="edge34" class="edge">
+<title>DELIVERIES-&gt;de_trip</title>
+<path fill="none" stroke="black" d="M1398.84,-109.19C1272.04,-83.39 1003.77,-28.8 1003.77,-28.8 1003.77,-28.8 990.16,-25.66 976.13,-22.41"/>
+</g>
+<!-- de_track -->
+<g id="node46" class="node">
+<title>de_track</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1079.77" cy="-14.4" rx="54.8" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1079.77" y="-11.7" font-family="Arial" font-size="9.00">tracking_number</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_track -->
+<g id="edge35" class="edge">
+<title>DELIVERIES-&gt;de_track</title>
+<path fill="none" stroke="black" d="M1398.63,-104.25C1317.32,-81.59 1181.06,-43.62 1116.21,-25.55"/>
+</g>
+<!-- de_customer -->
+<g id="node47" class="node">
+<title>de_customer</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1230.77" cy="-14.4" rx="53.15" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1230.77" y="-11.7" font-family="Arial" font-size="9.00">customer_name</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_customer -->
+<g id="edge36" class="edge">
+<title>DELIVERIES-&gt;de_customer</title>
+<path fill="none" stroke="black" d="M1418.02,-101.39C1369.91,-79.3 1295.9,-45.31 1256.89,-27.4"/>
+</g>
+<!-- de_address -->
+<g id="node48" class="node">
+<title>de_address</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1382.77" cy="-14.4" rx="55.47" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1382.77" y="-11.7" font-family="Arial" font-size="9.00">delivery_address</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_address -->
+<g id="edge37" class="edge">
+<title>DELIVERIES-&gt;de_address</title>
+<path fill="none" stroke="black" d="M1447.96,-101.52C1431.66,-79.99 1406.74,-47.06 1392.91,-28.79"/>
+</g>
+<!-- de_weight -->
+<g id="node49" class="node">
+<title>de_weight</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1544.77" cy="-14.4" rx="63.07" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1544.77" y="-11.7" font-family="Arial" font-size="9.00">package_weight_kg</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_weight -->
+<g id="edge38" class="edge">
+<title>DELIVERIES-&gt;de_weight</title>
+<path fill="none" stroke="black" d="M1479.58,-101.52C1495.88,-79.99 1520.81,-47.06 1534.64,-28.79"/>
+</g>
+<!-- de_scheduled -->
+<g id="node50" class="node">
+<title>de_scheduled</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1714.77" cy="-14.4" rx="63.73" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1714.77" y="-11.7" font-family="Arial" font-size="9.00">scheduled_datetime</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_scheduled -->
+<g id="edge39" class="edge">
+<title>DELIVERIES-&gt;de_scheduled</title>
+<path fill="none" stroke="black" d="M1513.06,-101.39C1564.6,-79.42 1643.74,-45.68 1685.94,-27.69"/>
+</g>
+<!-- de_delivered -->
+<g id="node51" class="node">
+<title>de_delivered</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1881.77" cy="-14.4" rx="60.75" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1881.77" y="-11.7" font-family="Arial" font-size="9.00">delivered_datetime</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_delivered -->
+<g id="edge40" class="edge">
+<title>DELIVERIES-&gt;de_delivered</title>
+<path fill="none" stroke="black" d="M1528.63,-105.8C1616.11,-83.4 1769.29,-44.19 1841.69,-25.66"/>
+</g>
+<!-- de_status -->
+<g id="node52" class="node">
+<title>de_status</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2035.77" cy="-14.4" rx="50.18" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2035.77" y="-11.7" font-family="Arial" font-size="9.00">delivery_status</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_status -->
+<g id="edge41" class="edge">
+<title>DELIVERIES-&gt;de_status</title>
+<path fill="none" stroke="black" d="M1528.83,-110.23C1647.71,-87.99 1896.82,-41.39 1994.87,-23.05"/>
+</g>
+<!-- de_signature -->
+<g id="node53" class="node">
+<title>de_signature</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="2189.77" cy="-14.4" rx="60.75" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2189.77" y="-11.7" font-family="Arial" font-size="9.00">recipient_signature</text>
+</g>
+<!-- DELIVERIES&#45;&gt;de_signature -->
+<g id="edge42" class="edge">
+<title>DELIVERIES-&gt;de_signature</title>
+<path fill="none" stroke="black" d="M1529.07,-112.91C1692.79,-89.11 2107.77,-28.8 2107.77,-28.8 2107.77,-28.8 2123.47,-26.24 2141.12,-23.35"/>
+</g>
+<!-- MAINTENANCE -->
+<g id="node6" class="node">
+<title>MAINTENANCE</title>
+<polygon fill="#ffd700" stroke="black" points="658.57,-413.8 528.97,-413.8 528.97,-370.6 658.57,-370.6 658.57,-413.8"/>
+<text xml:space="preserve" text-anchor="middle" x="593.77" y="-388.9" font-family="Arial" font-size="11.00">MAINTENANCE</text>
+</g>
+<!-- m_id -->
+<g id="node54" class="node">
+<title>m_id</title>
+<polygon fill="#e8e8e8" stroke="black" points="79.54,-272.2 0,-272.2 0,-243.4 79.54,-243.4 79.54,-272.2"/>
+<text xml:space="preserve" text-anchor="middle" x="39.77" y="-255.1" font-family="Arial" font-size="9.00">maintenance_id</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_id -->
+<g id="edge43" class="edge">
+<title>MAINTENANCE-&gt;m_id</title>
+<path fill="none" stroke="black" d="M528.56,-377.36C394.57,-348.94 100.77,-286.6 100.77,-286.6 100.77,-286.6 85.28,-279.54 69.92,-272.54"/>
+</g>
+<!-- m_vehicle -->
+<g id="node55" class="node">
+<title>m_vehicle</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="168.77" cy="-257.8" rx="46.22" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="168.77" y="-255.1" font-family="Arial" font-size="9.00">vehicle_id FK</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_vehicle -->
+<g id="edge44" class="edge">
+<title>MAINTENANCE-&gt;m_vehicle</title>
+<path fill="none" stroke="black" d="M528.71,-372.14C425.74,-341.97 236.77,-286.6 236.77,-286.6 236.77,-286.6 214.66,-277.56 195.65,-269.79"/>
+</g>
+<!-- m_date -->
+<g id="node56" class="node">
+<title>m_date</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="317.77" cy="-257.8" rx="59.44" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="317.77" y="-255.1" font-family="Arial" font-size="9.00">maintenance_date</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_date -->
+<g id="edge45" class="edge">
+<title>MAINTENANCE-&gt;m_date</title>
+<path fill="none" stroke="black" d="M550.04,-370.22C491.82,-342.29 390.73,-293.8 343.49,-271.14"/>
+</g>
+<!-- m_type -->
+<g id="node57" class="node">
+<title>m_type</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="479.77" cy="-257.8" rx="59.11" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="479.77" y="-255.1" font-family="Arial" font-size="9.00">maintenance_type</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_type -->
+<g id="edge46" class="edge">
+<title>MAINTENANCE-&gt;m_type</title>
+<path fill="none" stroke="black" d="M575.71,-370.22C552.1,-342.8 511.43,-295.57 491.49,-272.4"/>
+</g>
+<!-- m_desc -->
+<g id="node58" class="node">
+<title>m_desc</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="620.77" cy="-257.8" rx="39.29" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="620.77" y="-255.1" font-family="Arial" font-size="9.00">description</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_desc -->
+<g id="edge47" class="edge">
+<title>MAINTENANCE-&gt;m_desc</title>
+<path fill="none" stroke="black" d="M598.05,-370.22C603.64,-342.8 613.27,-295.57 618,-272.4"/>
+</g>
+<!-- m_cost -->
+<g id="node59" class="node">
+<title>m_cost</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="738.77" cy="-257.8" rx="36" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="738.77" y="-255.1" font-family="Arial" font-size="9.00">cost</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_cost -->
+<g id="edge48" class="edge">
+<title>MAINTENANCE-&gt;m_cost</title>
+<path fill="none" stroke="black" d="M616.75,-370.22C647.25,-342.37 700.16,-294.05 725.07,-271.31"/>
+</g>
+<!-- m_next -->
+<g id="node60" class="node">
+<title>m_next</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="871.77" cy="-257.8" rx="54.48" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="871.77" y="-255.1" font-family="Arial" font-size="9.00">next_maint_date</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_next -->
+<g id="edge49" class="edge">
+<title>MAINTENANCE-&gt;m_next</title>
+<path fill="none" stroke="black" d="M637.82,-370.22C696.61,-342.22 798.81,-293.55 846.24,-270.96"/>
+</g>
+<!-- m_by -->
+<g id="node61" class="node">
+<title>m_by</title>
+<ellipse fill="#e8e8e8" stroke="black" cx="1016.77" cy="-257.8" rx="47.21" ry="14.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1016.77" y="-255.1" font-family="Arial" font-size="9.00">performed_by</text>
+</g>
+<!-- MAINTENANCE&#45;&gt;m_by -->
+<g id="edge50" class="edge">
+<title>MAINTENANCE-&gt;m_by</title>
+<path fill="none" stroke="black" d="M658.7,-372.01C760.9,-341.82 947.77,-286.6 947.77,-286.6 947.77,-286.6 970.22,-277.56 989.5,-269.79"/>
+</g>
+<!-- realiza&#45;&gt;TRIPS -->
+<g id="edge52" class="edge">
+<title>realiza-&gt;TRIPS</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1624.37,-508.56C1647.92,-484.4 1690.97,-440.21 1716.41,-414.1"/>
+<text xml:space="preserve" text-anchor="middle" x="1683.61" y="-452.8" font-family="Arial" font-size="10.00">N</text>
+</g>
+<!-- conduce&#45;&gt;TRIPS -->
+<g id="edge54" class="edge">
+<title>conduce-&gt;TRIPS</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1736.77,-497.52C1736.77,-472.62 1736.77,-436.81 1736.77,-414.29"/>
+<text xml:space="preserve" text-anchor="middle" x="1740.38" y="-452.8" font-family="Arial" font-size="10.00">N</text>
+</g>
+<!-- sigue&#45;&gt;TRIPS -->
+<g id="edge56" class="edge">
+<title>sigue-&gt;TRIPS</title>
+<path fill="none" stroke="black" stroke-width="2" d="M2974.11,-514.45C2956.3,-506.72 2935.77,-497.8 2935.77,-497.8 2935.77,-497.8 2051.29,-420.64 1801.66,-398.86"/>
+<text xml:space="preserve" text-anchor="middle" x="2517.34" y="-452.8" font-family="Arial" font-size="10.00">N</text>
+</g>
+<!-- contiene&#45;&gt;DELIVERIES -->
+<g id="edge58" class="edge">
+<title>contiene-&gt;DELIVERIES</title>
+<path fill="none" stroke="black" stroke-width="2" d="M1463.77,-228.72C1463.77,-203.82 1463.77,-168.01 1463.77,-145.49"/>
+<text xml:space="preserve" text-anchor="middle" x="1467.38" y="-184" font-family="Arial" font-size="10.00">N</text>
+</g>
+<!-- recibe&#45;&gt;MAINTENANCE -->
+<g id="edge60" class="edge">
+<title>recibe-&gt;MAINTENANCE</title>
+<path fill="none" stroke="black" stroke-width="2" d="M593.77,-497.52C593.77,-472.62 593.77,-436.81 593.77,-414.29"/>
+<text xml:space="preserve" text-anchor="middle" x="597.38" y="-452.8" font-family="Arial" font-size="10.00">N</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,110 @@
+// FleetLogix - Modelo Relacional
+// Usar en: https://dbdiagram.io/
+
+Table vehicles {
+  vehicle_id SERIAL [pk, increment]
+  license_plate VARCHAR(10) [unique, not null]
+  vehicle_type VARCHAR(20) [not null, note: 'Camión Grande, Camión Mediano, Van, Motocicleta']
+  capacity_kg INTEGER [not null]
+  fuel_type VARCHAR(20) [not null, note: 'Diesel, Gasolina, GLP']
+  acquisition_date DATE [not null]
+  status VARCHAR(20) [default: 'active', note: 'active, inactive, maintenance']
+  
+  Indexes {
+    status [name: 'idx_vehicles_status']
+  }
+  
+  Note: 'Tabla maestra: 200 vehículos de la flota'
+}
+
+Table drivers {
+  driver_id SERIAL [pk, increment]
+  employee_code VARCHAR(20) [unique, not null]
+  first_name VARCHAR(50) [not null]
+  last_name VARCHAR(50) [not null]
+  license_number VARCHAR(20) [unique, not null]
+  license_expiry DATE [not null]
+  phone VARCHAR(20)
+  hire_date DATE [not null]
+  status VARCHAR(20) [default: 'active', note: 'active, inactive, on_leave']
+  
+  Note: 'Tabla maestra: 400 conductores empleados'
+}
+
+Table routes {
+  route_id SERIAL [pk, increment]
+  route_code VARCHAR(10) [unique, not null]
+  origin_city VARCHAR(100) [not null]
+  destination_city VARCHAR(100) [not null]
+  distance_km DECIMAL(6,2) [not null]
+  estimated_duration_hours DECIMAL(4,2) [not null]
+  toll_cost DECIMAL(6,2) [default: 0]
+  
+  Note: 'Tabla maestra: 50 rutas entre 5 ciudades (Santo Domingo, Santiago, La Romana, Puerto Plata, San Cristóbal)'
+}
+
+Table trips {
+  trip_id SERIAL [pk, increment]
+  vehicle_id INTEGER [not null]
+  driver_id INTEGER [not null]
+  route_id INTEGER [not null]
+  departure_datetime TIMESTAMP [not null]
+  arrival_datetime TIMESTAMP [null, note: 'NULL si status = in_progress']
+  fuel_consumed_liters DECIMAL(6,2) [not null]
+  total_weight_kg INTEGER [not null, note: '50-95% de capacidad del vehículo']
+  status VARCHAR(20) [default: 'in_progress', note: 'completed (95%), in_progress (3%), cancelled (2%)']
+  
+  Indexes {
+    departure_datetime [name: 'idx_trips_departure']
+  }
+  
+  Note: 'Tabla transaccional: 100,000 viajes (2 años de operación 2024-2025)'
+}
+
+Table deliveries {
+  delivery_id SERIAL [pk, increment]
+  trip_id INTEGER [not null]
+  tracking_number VARCHAR(20) [unique, not null]
+  customer_name VARCHAR(100) [not null]
+  delivery_address TEXT [not null]
+  package_weight_kg DECIMAL(6,2) [not null]
+  scheduled_datetime TIMESTAMP [not null]
+  delivered_datetime TIMESTAMP [null]
+  delivery_status VARCHAR(20) [default: 'pending', note: 'delivered (85%), pending (10%), failed (5%)']
+  recipient_signature BOOLEAN [default: false]
+  
+  Indexes {
+    delivery_status [name: 'idx_deliveries_status']
+  }
+  
+  Note: 'Tabla transaccional: ~400,000 entregas (2-6 por viaje, 4 más común)'
+}
+
+Table maintenance {
+  maintenance_id SERIAL [pk, increment]
+  vehicle_id INTEGER [not null]
+  maintenance_date DATE [not null]
+  maintenance_type VARCHAR(50) [not null, note: 'Cambio de aceite, Revisión de frenos, Cambio de llantas, Mantenimiento general, Revisión de motor, Alineación y balanceo']
+  description TEXT
+  cost DECIMAL(8,2) [not null]
+  next_maintenance_date DATE [not null]
+  performed_by VARCHAR(100)
+  
+  Note: 'Tabla transaccional: ~5,000 registros (cada ~20 viajes por vehículo)'
+}
+
+// RELACIONES 1:N
+// Un vehículo realiza múltiples viajes
+Ref: vehicles.vehicle_id < trips.vehicle_id [delete: restrict]
+
+// Un conductor conduce múltiples viajes
+Ref: drivers.driver_id < trips.driver_id [delete: restrict]
+
+// Una ruta es usada en múltiples viajes
+Ref: routes.route_id < trips.route_id [delete: restrict]
+
+// Un viaje contiene múltiples entregas
+Ref: trips.trip_id < deliveries.trip_id [delete: cascade]
+
+// Un vehículo tiene múltiples mantenimientos
+Ref: vehicles.vehicle_id < maintenance.vehicle_id [delete: cascade]
